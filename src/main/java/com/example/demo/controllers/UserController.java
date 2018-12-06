@@ -14,14 +14,14 @@ import com.example.demo.dto.UserDTO;
 import com.example.demo.services.UserService;
 
 @RestController
-@RequestMapping(value="/users")
+@RequestMapping(value = "/users")
 public class UserController {
-	
+
 	@Autowired
 	private UserService service;
-	
-	@RequestMapping(method=RequestMethod.GET)
-	public ResponseEntity<List<UserDTO>> findAll(){
+
+	@RequestMapping(method = RequestMethod.GET)
+	public ResponseEntity<List<UserDTO>> findAll() {
 		List<User> users = service.findAll();
 		List<UserDTO> usersDto = users.stream().map(x -> new UserDTO(x)).collect(Collectors.toList());
 		return ResponseEntity.ok().body(usersDto);

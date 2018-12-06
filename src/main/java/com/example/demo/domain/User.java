@@ -6,15 +6,16 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class User implements Serializable{
+public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
- 
+
 	@Id
 	private String id;
 	private String nome;
 	private String email;
-	
-	public User() { }
+
+	public User() {
+	}
 
 	public User(String id, String nome, String email) {
 		this.id = id;
@@ -71,5 +72,4 @@ public class User implements Serializable{
 		return true;
 	}
 
-	
 }
